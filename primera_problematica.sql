@@ -1,3 +1,5 @@
+-- Creacion y insercion de datos en la tabla tipo_cliente
+
 create table tipo_cliente(
     customer_type_id INTEGER PRIMARY KEY,
     customer_type_description TEXT NOT NULL
@@ -5,6 +7,10 @@ create table tipo_cliente(
 
 INSERT INTO tipo_cliente (customer_type_description)
 VALUES ("Classic"), ("Gold"), ("Black");
+
+
+-- Creacion y insercion de datos en la tabla tipo_cuenta
+
 
 CREATE TABLE tipo_cuenta(
     account_type_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -19,6 +25,8 @@ VALUES ("Caja de ahorro en Pesos"),
 ("Cuenta inversion");
 
 
+-- Creacion y insercion de datos en la tabla marca_tarjeta
+
 CREATE TABLE marca_tarjeta(
     brand_card_id INTEGER PRIMARY KEY AUTOINCREMENT,
     brand_card_name TEXT NOT NULL
@@ -30,6 +38,10 @@ VALUES
   ("Visa"),
   ("American Express");
   
+
+
+-- Creacion de la tabla tarjeta
+
 CREATE TABLE tarjeta(
     card_id INTEGER PRIMARY KEY AUTOINCREMENT,
     card_number TEXT UNIQUE NOT NULL CHECK (length(card_number) <= 20),
@@ -44,3 +56,8 @@ CREATE TABLE tarjeta(
 );
 
 
+-- cambiar formato de la fecha en la columna employee_hire_date de la tabla empleado
+
+UPDATE empleado set employee_hire_date = SUBSTR(employee_hire_date, 7, 4)
+     || '-' || SUBSTR(employee_hire_date, 4, 2)
+     || '-' || SUBSTR(employee_hire_date, 1, 2)

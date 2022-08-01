@@ -23,4 +23,5 @@ for x in range(0,500):
 
     customer_id+=1
 
-# Copiar y pegar esto en sqlite, sacar la ultima ','
+    
+# Copiar y pegar el resultado en sqlite, sacar la ultima ','
